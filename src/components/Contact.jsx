@@ -10,9 +10,7 @@ const Contact = () => {
     setLoading(true);
     
     const formData = new FormData(event.target);
-    // Sua chave já inserida aqui:
-    formData.append("access_key", "6507389f-7a58-4ab4-a56a-e4d545ae8419");
-
+    formData.append("access_key", import.meta.env.VITE_WEB3FORMS_KEY);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
