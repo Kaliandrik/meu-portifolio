@@ -27,6 +27,9 @@ const Header = () => {
               loop
               muted
               playsInline
+              disablePictureInPicture
+              controls={false}
+              onLoadedData={(e) => e.target.play()}
               className="avatar-video"
             >
               Seu navegador não suporta vídeos.
@@ -37,18 +40,18 @@ const Header = () => {
         {/* --- COLUNA DO TEXTO --- */}
         <div className="hero-text-container">
           {/* Tag de Status */}
-          <motion.span 
+          <motion.span
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="tag" 
+            className="tag"
             style={{ marginBottom: '1rem', display: 'inline-block' }}
           >
             🚀 Disponível para Estágio
           </motion.span>
 
           {/* Título Principal */}
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -61,7 +64,7 @@ const Header = () => {
           </motion.h1>
 
           {/* Subtítulo */}
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -71,11 +74,11 @@ const Header = () => {
           </motion.p>
 
           {/* Tags de Linguagens (Entrada em cascata) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="project-tags" 
+            className="project-tags"
             style={{ marginBottom: '2rem' }}
           >
             <span className="method" style={{ padding: '8px 15px', fontSize: '0.8rem' }}>
@@ -90,13 +93,13 @@ const Header = () => {
           </motion.div>
 
           {/* Botão de Ação */}
-          <motion.button 
+          <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.4, delay: 1 }}
-            onClick={scrollToContact} 
+            onClick={scrollToContact}
             className="cta-button primary"
           >
             Vamos conversar <ChevronRight size={18} />
